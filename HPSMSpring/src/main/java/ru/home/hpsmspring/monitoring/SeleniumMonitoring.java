@@ -132,16 +132,12 @@ public class SeleniumMonitoring {
 
         } catch (StaleElementReferenceException | TimeoutException | ElementClickInterceptedException e){
 
-            System.out.println("Исключение - StaleElementReferenceException");
-
             e.printStackTrace();
 
             driver.get(HPSM_URL);
             return false;
 
         } catch (org.openqa.selenium.WebDriverException e){
-            System.out.println("Исключение - WebDriverException");
-
             e.printStackTrace();
 
             finishSelenium();
@@ -200,7 +196,6 @@ public class SeleniumMonitoring {
         } catch (org.openqa.selenium.NoSuchElementException | org.openqa.selenium.StaleElementReferenceException | org.openqa.selenium.TimeoutException e) {
 
             e.printStackTrace();
-            System.out.println("NoSuchElementException | org.openqa.selenium.StaleElementReferenceException | org.openqa.selenium.TimeoutException");
 
             return false;
         } finally {
@@ -258,7 +253,6 @@ public class SeleniumMonitoring {
         driver.switchTo().defaultContent();
 
         WebElement aboutUser = driver.findElement(By.xpath("//button[text()='Информация о пользователе']"));
-
 
         aboutUser.click();
 
